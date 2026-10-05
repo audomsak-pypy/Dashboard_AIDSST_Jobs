@@ -21,6 +21,7 @@ df_hiring = data["hiring"]
 df_required_skills = data["required_skills"]
 df_salary = data["salary"]
 df_mismatch = data["mismatch"]
+sources = data.get("sources", {})
 
 # ----------------- UI Layout -----------------
 app.layout = dbc.Container([
@@ -91,7 +92,22 @@ app.layout = dbc.Container([
                 ], width=12)
             ], className="mt-4")
         ])
-    ], id="tabs", active_tab="tab-1")
+    ], id="tabs", active_tab="tab-1"),
+    
+    html.Hr(),
+    dbc.Row([
+        dbc.Col([
+            html.H5("Data Sources", className="mt-3"),
+            html.Ul([
+                html.Li(f"Graduates Data: {sources.get('graduates', 'N/A')}"),
+                html.Li(f"Core Courses: {sources.get('courses', 'N/A')}"),
+                html.Li(f"Employment Rates: {sources.get('employment', 'N/A')}"),
+                html.Li(f"Tuition Fees: {sources.get('tuition', 'N/A')}"),
+                html.Li(f"Job Salaries & Vacancies: {sources.get('salaries', 'N/A')}"),
+                html.Li(f"Required Skills: {sources.get('skills', 'N/A')}"),
+            ], className="text-muted", style={"fontSize": "0.9em"})
+        ], width=12)
+    ], className="mb-5")
 ], fluid=True)
 
 
