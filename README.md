@@ -28,3 +28,6 @@ The mock data generation strategy is based on the following real-world datasets:
 
 ## Getting Started
 Ensure you have Python installed. The required packages include `dash`, `dash-bootstrap-components`, `pandas`, and `plotly`. Run the `app.py` script to launch the dashboard locally.
+
+## Dashboard App.py
+Link: http://127.0.0.1:8050/
