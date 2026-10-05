@@ -3,10 +3,10 @@ from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import plotly.graph_objects as go
-from mock_data import generate_mock_data
+from data_loader import load_dashboard_data
 
-# Load mock data
-data = generate_mock_data()
+# Load real data from internet
+data = load_dashboard_data()
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 app.title = "AI & Data Science Labor Market Dashboard"
